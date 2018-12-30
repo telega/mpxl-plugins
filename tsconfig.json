@@ -7,17 +7,15 @@
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "noImplicitAny": true,
+    "alwaysStrict": false,
+    "noImplicitUseStrict": true,
     "declarationDir": "dist/types",
     "declaration": true,
     "target": "es2015",
     "module": "es2015",
-    "strict": true
+    "strict": true,
+    "outDir": "../plugins"
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["src/plugins/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
