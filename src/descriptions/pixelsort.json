@@ -1,6 +1,12 @@
 {
-    "name": "Pixelsort",
-    "main": "pixelsort.js",
-    "tools": ["SQUARE"],
-    "options": []
+  "name": "Pixelsort",
+  "main": "pixelsort.js",
+  "tools": ["SQUARE"],
+  "controls": [
+    {
+      "label": "direction",
+      "name": "direction",
+      "options": [{ "value": "up" }, { "value": "down" }]
+    }
+  ]
 }
