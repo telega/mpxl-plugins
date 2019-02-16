@@ -4,7 +4,7 @@
   "description": "Plugins for mpxl",
   "scripts": {
     "watch": "tsc --watch",
-    "copyjson": "cp -r ./src/descriptions/* ../plugins",
+    "copyjson": "cp -r ./src/descriptions/* ../../plugins",
     "build": "npm run copyjson && tsc"
   },
   "author": {

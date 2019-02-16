@@ -14,7 +14,7 @@
     "target": "es2015",
     "module": "es2015",
     "strict": true,
-    "outDir": "../plugins"
+    "outDir": "../../plugins"
   },
   "include": ["src/plugins/**/*"],
   "exclude": ["node_modules", "dist"]

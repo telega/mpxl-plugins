@@ -10,6 +10,10 @@ function plugin(p: any, toolData: any) {
       ? toolData.point.y - toolData.endPoint.y
       : toolData.endPoint.y - toolData.point.y;
 
+  const {controlOptions }= toolData
+
+  const {direction }= controlOptions
+
   //let pixels = [];
 
   for (let i = 0; i < toolAreaHeight; i++) {
@@ -20,7 +24,7 @@ function plugin(p: any, toolData: any) {
     }
 
     rowArray.sort((a, b) => {
-      return a[0] - b[0];
+      return direction === 'left'? a[0] - b[0]: b[0]- a[0];
     });
 
     for (let j = 0; j < toolAreaWidth; j++) {
