@@ -10,27 +10,34 @@ function plugin(p: any, toolData: any) {
       ? toolData.point.y - toolData.endPoint.y
       : toolData.endPoint.y - toolData.point.y;
 
-  const {controlOptions }= toolData
+  const x =
+    toolData.point.x > toolData.endPoint.x
+      ? toolData.endPoint.x
+      : toolData.point.x;
+  const y =
+    toolData.point.y > toolData.endPoint.y
+      ? toolData.endPoint.y
+      : toolData.point.y;
 
-  const {direction }= controlOptions
+  const { controlOptions } = toolData;
 
-  //let pixels = [];
+  const { direction } = controlOptions;
 
   for (let i = 0; i < toolAreaHeight; i++) {
     let rowArray = [];
     for (let j = 0; j < toolAreaWidth; j++) {
-      let pixelArray = p.get(toolData.point.x + j, toolData.point.y + i);
+      let pixelArray = p.get(x + j, y + i);
       rowArray.push(pixelArray);
     }
 
     rowArray.sort((a, b) => {
-      return direction === 'left'? a[0] - b[0]: b[0]- a[0];
+      return direction === "left" ? a[0] - b[0] : b[0] - a[0];
     });
 
     for (let j = 0; j < toolAreaWidth; j++) {
       p.set(
-        toolData.point.x + j,
-        toolData.point.y + i,
+        x + j,
+        y + i,
         p.color(
           `rgba(${rowArray[j][0]},${rowArray[j][1]},${rowArray[j][2]},${
             rowArray[j][3]

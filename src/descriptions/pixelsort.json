@@ -6,7 +6,7 @@
     {
       "label": "direction",
       "name": "direction",
-      "options": [{ "value": "up" }, { "value": "down" }]
+      "options": [{ "value": "left" }, { "value": "right" }]
     }
   ]
 }
